@@ -1,0 +1,59 @@
+.drink {
+    padding: 3rem;
+
+    @media only screen and (max-width: 30em) {
+        padding: 1rem;
+    }
+
+    &__container {
+        margin-top: 8rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+        gap: 3rem;
+    }
+
+    &__box {
+        background: $grey-cl;
+        border-radius: .3rem;
+        box-shadow: 0.5rem 0.3rem 1rem rgba(0, 0, 0, 0.4);
+    }
+
+    &__img {
+        position: relative;
+        width: 100%;
+        height: 22rem;
+        clip-path: polygon(0 0, 100% 0%, 100% 80%, 0 100%);
+
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__info {
+        padding: 2rem;
+
+        h3 {
+            margin-bottom: 1.5rem;
+        }
+
+        p {
+            font-size: 1.4rem;
+        }
+    }
+}
+
+.slick-slide .drink-slider__img {
+    display: block;
+    width: 100%;
+    height: 40rem;
+    object-fit: cover;
+}

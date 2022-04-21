@@ -1,0 +1,38 @@
+.map-modal {
+    display: none;
+}
+
+.map {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    height: 80vh;
+    z-index: 1000;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, .7);
+    z-index: 10;
+}
+
+.map--times {
+    font-size: 2rem;
+    color: $white-cl;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.show {
+    display: block;
+}

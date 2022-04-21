@@ -1,0 +1,82 @@
+.form {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: url('/public/images/form.jpg');
+    background-position: right;
+    background-size: cover;
+    padding: 2rem;
+
+    @include centerElement;
+
+    &__container {
+        width: 50rem;
+        max-width: 100%;
+        isolation: isolate;
+
+        background: rgba(91, 91, 91, 0.7);
+    }
+
+    &__form {
+        width: 80%;
+        margin: 8rem;
+        margin-inline: auto;
+
+        & *+* {
+            margin-top: 3.5rem;
+        }
+
+        & .error-message {
+            color: $red-cl;
+        }
+    }
+
+    & .input-box {
+        width: 100%;
+        height: 4rem;
+        text-align: center;
+        box-shadow: 0.3rem 0.3rem 0.7rem rgba(0, 0, 0, 0.5);
+
+        & input {
+            width: 100%;
+            height: 100%;
+            border-radius: .5rem;
+            border: none;
+            outline: none;
+            padding: 0 1.2rem;
+        }
+    }
+
+    &__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($black-cl, .6);
+    }
+
+    & .form-input-login {
+        color: $white-cl;
+        margin-top: 1rem;
+
+        & a {
+            text-decoration: none;
+            color: $red-cl;
+        }
+    }
+
+    & .success-message {
+        height: 10rem;
+        margin: 2rem;
+        @include centerElement;
+
+        background: linear-gradient(90deg, rgb(32, 32, 32), rgb(95, 95, 95));
+
+        & p {
+            font-size: 2rem;
+            font-weight: 600;
+            color: $orange-cl;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+.delivery {
+    &__arrow {
+        position: absolute;
+        top: 50%;
+        width: 4rem;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.3rem;
+        color: $black-cl;
+        background: $white-cl;
+        box-shadow: $box-shadow--light;
+        border-radius: 50%;
+        border: none;
+        outline: none;
+        cursor: pointer;
+
+        &--left {
+            left: 0;
+        }
+
+        &--right {
+            right: 0;
+        }
+    }
+}

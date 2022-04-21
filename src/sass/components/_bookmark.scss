@@ -1,0 +1,138 @@
+.bookmark {
+    &__header {
+        position: relative;
+        padding: 2rem 4rem;
+
+        @media only screen and (max-width: 37.5em) {
+            padding: 2rem;
+        }
+
+        & h2 {
+            font-weight: 400;
+            display: inline-block;
+
+            @media only screen and (max-width: 30em) {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    &__body {
+        min-height: 40rem;
+        padding: 3rem 4.3rem;
+        box-shadow: $box-shadow--light;
+        background: $grey-cl;
+
+        @media only screen and (max-width: 37.5em) {
+            padding: 2rem;
+        }
+
+        & article:not(:last-child) {
+            margin-bottom: 3rem;
+        }
+    }
+
+    &__restaurant {
+        display: flex;
+        border-radius: .5rem;
+        overflow: hidden;
+        background: $white-cl;
+
+        @media only screen and (max-width: 37.5em) {
+            flex-direction: column;
+        }
+    }
+
+    &__img {
+        position: relative;
+        width: 30rem;
+        height: 30vh;
+
+        @media only screen and (max-width: 37.5em) {
+            width: 100%;
+        }
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        & svg {
+            font-size: 3rem;
+            position: absolute;
+            top: 1rem;
+            left: 2rem;
+            color: rgb(138, 137, 137);
+            opacity: 0;
+            transition: opacity .3s ease-in;
+            background: $white-cl;
+            width: 5rem;
+            border-radius: .5rem;
+        }
+
+        &:hover svg {
+            opacity: 1;
+        }
+    }
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        flex: 1;
+        padding: 1.5rem 2rem;
+
+        @media only screen and (max-width: 37.5em) {
+            flex-direction: column;
+        }
+
+        &--left {
+            display: flex;
+            flex-direction: column;
+
+            & .restaurants__rating {
+                margin-top: auto;
+            }
+
+            @media only screen and (max-width: 37.5em) {
+                & p {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+
+        &--right {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            @media only screen and (max-width: 37.5em) {
+                flex-direction: row;
+                align-items: center;
+                padding: 1.5rem 0 0 0;
+            }
+
+            & svg {
+                color: $red-cl;
+                font-size: 2rem;
+                margin-top: 1rem;
+                cursor: pointer;
+
+                align-self: flex-end;
+            }
+        }
+    }
+
+    &__type-list {
+        list-style-type: none;
+        display: flex;
+
+        & li {
+            font-weight: 600;
+        }
+
+        & *+* {
+            margin-left: .7rem;
+        }
+    }
+}

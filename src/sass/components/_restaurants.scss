@@ -1,0 +1,119 @@
+.restaurants {
+    margin-top: 5rem;
+    padding: 3rem 0;
+    background: $white-cl;
+
+    @media only screen and (max-width: 37.5em) {
+        margin-top: 0;
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 1fr repeat(4, 1fr);
+        gap: 2rem;
+        padding: 3rem;
+        background: $grey-cl;
+
+        @media only screen and (max-width: 48em) {
+            grid-template-columns: none;
+        }
+
+        @media only screen and (max-width: 30em) {
+            padding: 1rem;
+        }
+    }
+
+    &__sidebar {
+        background: $white-cl;
+        border-radius: .7rem;
+        box-shadow: $box-shadow--light;
+    }
+
+    &__grid {
+        grid-column: 2 / -1;
+    }
+
+    &__container {
+        background: $grey-cl;
+        overflow: hidden;
+
+        & .slider {
+            position: relative;
+            margin-bottom: 5rem;
+        }
+
+        & .slide {
+            background: $white-cl;
+            box-shadow: .3rem .3rem 1rem rgba(0, 0, 0, .3);
+            border-radius: 1rem;
+
+            & a {
+                text-decoration: none;
+                color: $black-cl;
+            }
+        }
+
+        & .slick-list {
+            height: 34rem;
+        }
+
+        & .slick-track {
+            &>*+* {
+                margin-left: 2rem;
+
+                @media only screen and (max-width: 30em) {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+
+    &__img {
+        max-width: 100%;
+        height: 20rem;
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+        }
+    }
+
+    &__info {
+        padding: 2rem;
+    }
+
+    &__name {
+        font-size: 1.7;
+    }
+
+    &__rating {
+        display: flex;
+        align-items: center;
+
+        &--number {
+            width: 3rem;
+            height: 3rem;
+            font-size: 1.6rem;
+            margin-right: 1rem;
+            border-radius: 50%;
+            box-shadow: $box-shadow--light;
+            background: rgb(100, 204, 100);
+            color: $white-cl;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            & span {
+                display: inline-block;
+            }
+        }
+
+        &--star {
+            color: rgb(255, 188, 21);
+        }
+    }
+
+}

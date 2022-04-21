@@ -1,0 +1,39 @@
+.icon {
+    &__header--heart {
+        color: $red-cl--1;
+    }
+
+    &__header--heart-booked {
+        color: $red-cl;
+    }
+
+    &__header--heart,
+    &__header--heart-booked {
+        font-size: 3rem;
+        cursor: pointer;
+    }
+
+    &__info {
+        margin-right: 1.2rem;
+
+        &--location {
+            color: #64cc64;
+        }
+
+        &--phone {
+            color: rgb(173, 173, 173);
+        }
+
+        &--clock {
+            color: $orange-cl;
+        }
+    }
+
+    &__bookmark {
+        font-size: 2rem;
+        color: $white-cl;
+        margin-left: 2rem;
+        cursor: pointer;
+        transition: color .5s ease;
+    }
+}

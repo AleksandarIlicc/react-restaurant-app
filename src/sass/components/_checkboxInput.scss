@@ -1,0 +1,17 @@
+.type {
+    &__establishment,
+    &__features {
+        background: $white-cl;
+    }
+}
+
+.input__box {
+    & input {
+        margin-right: 1rem;
+        cursor: pointer;
+    }
+
+    & label {
+        font-weight: 600;
+    }
+}
