@@ -84,6 +84,8 @@ const Home = ({
 
     const styleContainer = {
         height: '50vh',
+        padding: '3rem',
+        textAlign: 'center',
         display: 'grid',
         placeItems: 'center'
     }

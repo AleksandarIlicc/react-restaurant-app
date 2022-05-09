@@ -11,8 +11,6 @@ import { Routes, Route } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 
 function App() {
-  const API_URL = `http://localhost:3500/restaurants`;
-
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [listRestaurants, setListRestaurants] = useState([]);
   const [bookmarked, setBookmarked] = useState([]);
@@ -21,22 +19,25 @@ function App() {
   const [search, setSearch] = useState('');
   const [searchResults, setSearchResults] = useState([]);
 
-  useEffect(() => {
-    const getRestaurants = async () => {
-      try {
-        const res = await fetch(API_URL);
-        if (!res.ok) throw Error(`Did not recieve expected data!`);
-        const restaurantsData = await res.json();
-        setAllRestaurants(restaurantsData);
-        setListRestaurants(restaurantsData);
-        setFetchError(null)
-      } catch (err) {
-        setFetchError(err.message);
-      }
+  useEffect(()=>{
+  const getData= async ()=>{
+    try {
+      const res = await fetch('data.json',{
+        headers : { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+         }
+      });
+      const data = await res.json();
+      setAllRestaurants(data.restaurants);
+      setListRestaurants(data.restaurants);
+      setFetchError(null)
+    } catch(err) {
+      setFetchError(err);
     }
-
-    getRestaurants();
-  }, []);
+  }
+    getData();
+  },[])
 
   useEffect(() => {
     setBookmarkCount(bookmarked.length);
