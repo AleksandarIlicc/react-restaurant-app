@@ -11,7 +11,7 @@ const GalleryListRestaurant = ({ listRestaurants, handleBookmark, bookmarked }) 
     const now = new Date();
     const currDay = now.getDay();
     const currHours = now.getHours();
-    const workingDay = days.find((_, i) => currDay === i);
+    const workingDay = days.find((_, i) => currDay - 1 === i);
 
     const daysInNum = () => {
         if (workingDay === 'su') return 0;
@@ -22,7 +22,7 @@ const GalleryListRestaurant = ({ listRestaurants, handleBookmark, bookmarked }) 
         if (workingDay === 'fr') return 5;
         if (workingDay === 'sa') return 6;
     }
-
+    
     return (
         <main>
             <section id='section' className='restaurant'>

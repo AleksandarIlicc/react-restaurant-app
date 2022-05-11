@@ -121,7 +121,7 @@ body {
 }
 
 .bookmark {
-  height: 80vh;
+  min-height: 80vh;
 }
 
 .bookmark__header {

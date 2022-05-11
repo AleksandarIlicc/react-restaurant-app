@@ -148,15 +148,15 @@
                 },
                 "fr": {
                     "open": 8,
-                    "closed": 24
+                    "closed": 2
                 },
                 "sa": {
                     "open": 8,
-                    "closed": 22
+                    "closed": 2
                 },
                 "su": {
                     "open": 9,
-                    "closed": 17
+                    "closed": 18
                 }
             }
         },
@@ -252,15 +252,15 @@
                 },
                 "fr": {
                     "open": 8,
-                    "closed": 24
+                    "closed": 1
                 },
                 "sa": {
                     "open": 8,
-                    "closed": 22
+                    "closed": 1
                 },
                 "su": {
                     "open": 9,
-                    "closed": 17
+                    "closed": 22
                 }
             }
         },
@@ -312,7 +312,7 @@
                 },
                 "su": {
                     "open": 9,
-                    "closed": 17
+                    "closed": 22
                 }
             }
         },
@@ -356,15 +356,15 @@
                 },
                 "fr": {
                     "open": 8,
-                    "closed": 24
+                    "closed": 1
                 },
                 "sa": {
                     "open": 8,
-                    "closed": 22
+                    "closed": 1
                 },
                 "su": {
                     "open": 9,
-                    "closed": 17
+                    "closed": 23
                 }
             }
         },
@@ -393,23 +393,23 @@
             "worktime": {
                 "mo": {
                     "open": 8,
-                    "closed": 24
+                    "closed": 22
                 },
                 "tu": {
                     "open": 8,
-                    "closed": 24
+                    "closed": 22
                 },
                 "we": {
                     "open": 8,
-                    "closed": 24
+                    "closed": 22
                 },
                 "th": {
                     "open": 8,
-                    "closed": 24
+                    "closed": 22
                 },
                 "fr": {
                     "open": 8,
-                    "closed": 24
+                    "closed": 22
                 },
                 "sa": {
                     "open": 8,
@@ -465,7 +465,7 @@
                 },
                 "sa": {
                     "open": 8,
-                    "closed": 22
+                    "closed": 24
                 },
                 "su": {
                     "open": 9,
@@ -522,7 +522,7 @@
                 },
                 "su": {
                     "open": 9,
-                    "closed": 17
+                    "closed": 22
                 }
             }
         }
