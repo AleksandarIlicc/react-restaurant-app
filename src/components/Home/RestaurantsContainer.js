@@ -14,6 +14,10 @@ const RestaurantsContainer = (
         handleCheck,
         establishItem,
         featuresItem,
+        mealsItem, 
+        priceItem,
+        cuisineItem,
+        dishesItem,
         isChecked,
         isRestaurantChecked,
         isDessertChecked,
@@ -38,6 +42,10 @@ const RestaurantsContainer = (
                     handleCheck={handleCheck}
                     establishItem={establishItem}
                     featuresItem={featuresItem}
+                    mealsItem={mealsItem}
+                    priceItem={priceItem}
+                    cuisineItem={cuisineItem}
+                    dishesItem={dishesItem}
                     showMap={showMap}
                     openMap={openMap}
                 />
