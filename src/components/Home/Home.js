@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import RestaurantsContainer from './RestaurantsContainer';
 import { useState } from 'react';
 import DrinkSection from './DrinkSection';
+import MobileAppSection from './MobileAppSection';
 
 const Home = ({
     allRestaurants,
@@ -135,7 +136,11 @@ const Home = ({
                         <p style={styleError}>{`Error: ${fetchError}`}</p>
                     </div>
                 }
+                
                 <DrinkSection />
+
+                <MobileAppSection />
+                
             </main>
         </>
     );

@@ -42,7 +42,7 @@
             width: 40vw;
             height: 100vh;
             padding: 2.5rem;
-            background-color: rgb(59, 59, 59);
+            background: url(/public/images/wood-background-menu.jpg);
             transition: all .3s ease;
             z-index: 1000;
 
@@ -77,7 +77,7 @@
             font-size: 2rem;
             margin-top: 2rem;
             padding-bottom: .3rem;
-            border-bottom: 1px solid #6f6f6f;
+            border-bottom: 1px solid #c7c7c7;
             width: 100%;
 
             &:hover {

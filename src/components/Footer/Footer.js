@@ -4,7 +4,7 @@ const Footer = () => {
     const currYear = new Date().getFullYear();
 
     return (
-        <footer className='footer mt--large'>
+        <footer className='footer'>
             <p>© {currYear} aleksandarilic.com | Practice yourself everyday. </p>
         </footer>
     )
