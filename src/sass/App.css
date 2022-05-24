@@ -1005,7 +1005,7 @@ body {
   position: relative;
   min-height: 80vh;
   width: 100%;
-  background: url(/public/images/mobile-app-section-bg.jpeg);
+  background: url(/public/images/mobile-app-section-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
@@ -1022,13 +1022,27 @@ body {
 }
 
 .mobile-app .container {
-  width: 60rem;
-  max-width: 90%;
+  width: 90%;
+  max-width: 60rem;
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   z-index: 1;
+}
+
+@media only screen and (max-width: 32em) {
+  .mobile-app .container {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 4rem;
+  }
 }
 
 .mobile-app .container .mobile--img {

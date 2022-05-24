@@ -5,7 +5,7 @@ const MobileAppSection = () => {
     <section className='mobile-app'>
     <div className='container'>
         <figure className='mobile--img'>
-            <img src="./images/mobile-with-transparent-bg.png" alt="mobile" />
+            <img src="./images/mobile.png" alt="mobile" />
             <div className='restaurant--motto'>
               <p>Good Restaurant</p>
               <p>Good Food</p>
