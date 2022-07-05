@@ -1,17 +1,14 @@
-.type {
-    &__establishment,
-    &__features {
-        background: $white-cl;
-    }
+.check-type {
+  background: $white-cl;
 }
 
 .input__box {
-    & input {
-        margin-right: 1rem;
-        cursor: pointer;
-    }
+  & input {
+    margin-right: 1rem;
+    cursor: pointer;
+  }
 
-    & label {
-        font-weight: 600;
-    }
+  & label {
+    font-weight: 600;
+  }
 }

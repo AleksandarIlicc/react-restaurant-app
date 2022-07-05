@@ -1,0 +1,9 @@
+.spinner-box {
+  text-align: center;
+  grid-column: 4 / 5;
+}
+
+svg.spinner {
+  font-size: 3rem;
+  animation: sinnperRotate 1.3s infinite;
+}
