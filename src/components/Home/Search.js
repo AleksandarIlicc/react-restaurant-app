@@ -1,10 +1,12 @@
 import React from "react";
 import { FaSistrix, FaSourcetree } from "react-icons/fa";
+import { useGlobalContext } from "../../context/GlobalContext";
 
-const Search = ({ search, setSearch, showSearchBar }) => {
+const Search = ({ showSearchBar }) => {
+  const { restaurantsDispatch } = useGlobalContext();
+
   return (
     <form
-      action="#"
       className={
         !showSearchBar ? "search__form" : "search__form search__form--show"
       }
@@ -14,8 +16,13 @@ const Search = ({ search, setSearch, showSearchBar }) => {
         type="search"
         className="search__input"
         placeholder="Nearby Restaurants"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
+        // value={search}
+        onChange={(e) =>
+          restaurantsDispatch({
+            type: "SEARCH_RESTAURANTS",
+            payload: e.target.value,
+          })
+        }
       />
       <div className="search__location">
         <FaSourcetree />

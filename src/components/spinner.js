@@ -3,7 +3,7 @@ import { FaSpinner } from "react-icons/fa";
 
 const Spinner = () => {
   return (
-    <div className="spinner-box">
+    <div style={{ marginTop: "2rem" }} className="spinner-box">
       <FaSpinner className="spinner" />
     </div>
   );

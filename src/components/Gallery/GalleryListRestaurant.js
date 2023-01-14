@@ -1,28 +1,21 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
-import GallerySection from './GallerySection';
+import React, { useState } from "react";
+import { useParams } from "react-router-dom";
+import { useGlobalContext } from "../../context/GlobalContext";
+import GallerySection from "./GallerySection";
 
-const GalleryListRestaurant = ({ listRestaurants, handleBookmark, bookmarked }) => {
-    const { id } = useParams();
-    const listRestaurant = listRestaurants.find(res => (res.id).toString() === id);
+const GalleryListRestaurant = () => {
+  const {
+    restaurantsState: { restaurants },
+  } = useGlobalContext();
+  const { id } = useParams();
+  const singleRestaurant = restaurants.find((res) => res.id.toString() === id);
 
-    if (bookmarked.some(restaurant => (restaurant.id).toString() === id)) {
-        listRestaurant.checked = true;
-    } else {
-        listRestaurant.checked = false;
-    }
-    
-    return (
-        <main>
-            <GallerySection 
-                restaurant={listRestaurant}
-                handleBookmark={handleBookmark}
-                bookmarked={bookmarked}
-                id={id}
-            />
-        </main>
-    );
+  return (
+    <main>
+      <GallerySection singleRestaurant={singleRestaurant} id={id} />
+    </main>
+  );
 };
 
 export default GalleryListRestaurant;

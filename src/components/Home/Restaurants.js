@@ -5,17 +5,21 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import DeliveryRestaurants from "../SortedRestaurants/DeliveryRestaurants";
 import OutDoorSeatingRestaurants from "../SortedRestaurants/OutDoorSeatingRestaurants";
-import ListOfRestaurants from "../pages/Restaurants/ListOfRestaurants";
+import RestaurantsList from "../../pages/Restaurants/RestaurantsList";
 import Spinner from "../spinner";
+import { useGlobalContext } from "../../context/GlobalContext";
 
-const Restaurants = ({ allRestaurants, listRestaurants, handleFilter }) => {
+const Restaurants = () => {
+  const {
+    restaurantsState: { restaurants, loading, error },
+  } = useGlobalContext();
   // Filter Delivery Restaurants
-  const filterDeliveryRestaurants = allRestaurants.filter(
+  const filterDeliveryRestaurants = restaurants.filter(
     (restaurant) => restaurant.delivery === true
   );
   // Filter OutDoor Seating Restaurants
-  const filterOutsittingRestaurants = allRestaurants.filter(
-    (restaurant) => restaurant.outdoorSitting === true
+  const filterOutsittingRestaurants = restaurants.filter(
+    (restaurant) => restaurant.outdoorsitting === true
   );
   // Ref Slider
   const refDeliverySlider = useRef();
@@ -66,12 +70,9 @@ const Restaurants = ({ allRestaurants, listRestaurants, handleFilter }) => {
 
   return (
     <div className="restaurants__container restaurants__grid">
-      {allRestaurants.length ? (
+      {!error ? (
         <>
-          <ListOfRestaurants
-            listRestaurants={listRestaurants}
-            handleFilter={handleFilter}
-          />
+          {loading ? <Spinner /> : <RestaurantsList />}
           <div className="slider">
             <h3
               style={{ marginLeft: 10 }}
@@ -81,7 +82,10 @@ const Restaurants = ({ allRestaurants, listRestaurants, handleFilter }) => {
             </h3>
             <Slider ref={refDeliverySlider} {...deliverySliderSettings}>
               {filterDeliveryRestaurants.map((restaurant) => (
-                <DeliveryRestaurants restaurant={restaurant} />
+                <DeliveryRestaurants
+                  key={restaurant.id}
+                  restaurant={restaurant}
+                />
               ))}
             </Slider>
             <button
@@ -106,7 +110,10 @@ const Restaurants = ({ allRestaurants, listRestaurants, handleFilter }) => {
             </h3>
             <Slider ref={refOutSeatingSlider} {...outdoorSliderSettings}>
               {filterOutsittingRestaurants.map((restaurant) => (
-                <OutDoorSeatingRestaurants restaurant={restaurant} />
+                <OutDoorSeatingRestaurants
+                  key={restaurant.id}
+                  restaurant={restaurant}
+                />
               ))}
             </Slider>
             <button
@@ -124,7 +131,7 @@ const Restaurants = ({ allRestaurants, listRestaurants, handleFilter }) => {
           </div>
         </>
       ) : (
-        <Spinner />
+        <p>{error}</p>
       )}
     </div>
   );

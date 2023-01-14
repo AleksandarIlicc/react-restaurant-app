@@ -1,22 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Rating from "../Rating";
+import Rating from "../../components/Rating";
 
-const DeliveryRestaurants = ({ restaurant }) => {
+const SingleRestaurant = ({ restaurant }) => {
   return (
-    <div className="slide">
-      <Link to={`/restaurant/${restaurant.id}`} key={restaurant.id}>
-        <figure className="restaurants__img">
+    <div className="list-restaurant">
+      <Link to={`/restaurantlist/${restaurant.id}`} key={restaurant.id}>
+        <figure className="list-restaurant__img">
           <img src={restaurant.image} alt={restaurant.name} />
         </figure>
-        <div className="restaurants__info">
-          <h3 className="restaurants__name">
+        <div className="list-restaurant__info">
+          <h3 className="list-restaurant__name mb--small">
             {restaurant.name.length >= 20
               ? restaurant.name.slice(0, 20) + "..."
               : restaurant.name}
           </h3>
           <Rating restaurant={restaurant} />
-          <p className="restaurants__address">
+          <p className="list-restaurant__address mt--small">
             {restaurant.address.length >= 30
               ? restaurant.address.slice(0, 30) + "..."
               : restaurant.address}
@@ -27,4 +27,4 @@ const DeliveryRestaurants = ({ restaurant }) => {
   );
 };
 
-export default DeliveryRestaurants;
+export default SingleRestaurant;

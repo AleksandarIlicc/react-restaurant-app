@@ -1,90 +1,99 @@
 .button {
-    &__map {
-        width: 60%;
-        height: 30%;
-        background: $white-cl;
-        color: $black-cl;
-        border: none;
-        border-radius: .3rem;
-        transition: background .3s ease-in;
-        cursor: pointer;
+  &__map {
+    width: 60%;
+    height: 30%;
+    background: $white-cl;
+    color: $black-cl;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.3rem;
+    transition: background 0.3s ease-in;
 
-        &:hover {
-            background: rgb(223, 223, 223);
-        }
-
-        &--loc {
-            color: $orange-cl;
-            margin-right: 1rem;
-        }
+    &:hover {
+      background: rgb(223, 223, 223);
     }
 
-    &__bookmark {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: transparent;
-        padding: .5rem 1rem;
-        border: none;
-        border-bottom: 2px solid $orange-cl;
-        outline: none;
+    &--loc {
+      color: $orange-cl;
+      margin-right: 1rem;
+    }
+  }
 
-        & svg {
-            color: $orange-cl;
+  &__bookmark {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-bottom: 2px solid $orange-cl;
+    outline: none;
 
-            @media only screen and (max-width: 37.5em) {
-                font-size: 2rem;
-            }
-        }
+    & svg {
+      color: $orange-cl;
 
-        & a {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: $black-cl;
-            text-decoration: none;
-
-            & span {
-                margin-left: 1rem;
-
-                @media only screen and (max-width: 37.5em) {
-                    display: none;
-                }
-            }
-        }
+      @media only screen and (max-width: 37.5em) {
+        font-size: 2rem;
+      }
     }
 
-    &__form {
-        font-size: 1.4rem;
-        font-weight: 600;
-        width: 100%;
-        height: 4rem;
-        border-radius: .5rem;
-        border: none;
-        outline: none;
-        color: $white-cl;
-        background: $orange-cl;
-        box-shadow: 0.3rem 0.3rem 0.7rem rgba(0, 0, 0, 0.5);
-        cursor: pointer;
-    }
+    & a {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: $black-cl;
+      text-decoration: none;
 
-    &__drink {
-        font-weight: 600;
-        padding: .7rem 2rem;
-        margin-top: 1.4rem;
-        border: none;
-        color: $black-cl;
-        background: linear-gradient(to right, #fffefd, #5b5b5b, #fffefd);
-        background-size: 300%;
-        background-position: 0 0;
-        box-shadow: 0.2rem 0.2rem 0.9rem rgba(0, 0, 0, 0.4);
-        cursor: pointer;
-        transition: all .3s ease;
+      & span {
+        margin-left: 1rem;
 
-        &:hover {
-            background-position: 100% 0;
+        @media only screen and (max-width: 37.5em) {
+          display: none;
         }
+      }
     }
+  }
+
+  &__form {
+    font-size: 1.4rem;
+    font-weight: 600;
+    width: 100%;
+    height: 4rem;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    color: $white-cl;
+    background: $orange-cl;
+    box-shadow: 0.3rem 0.3rem 0.7rem rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+  }
+
+  &__clear-filters {
+    padding: 0.5rem 2rem;
+    border: none;
+    border-radius: 0.3rem;
+    background-color: $orange-cl;
+    color: $white-cl;
+    cursor: pointer;
+  }
+
+  &__drink {
+    font-weight: 600;
+    padding: 0.7rem 2rem;
+    margin-top: 1.4rem;
+    border: none;
+    color: $black-cl;
+    background: linear-gradient(to right, #fffefd, #5b5b5b, #fffefd);
+    background-size: 300%;
+    background-position: 0 0;
+    box-shadow: 0.2rem 0.2rem 0.9rem rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-position: 100% 0;
+    }
+  }
 }
