@@ -1,5 +1,6 @@
 import React, { useReducer, useContext, createContext, useEffect } from "react";
 import { restaurantsReducer } from "./Reducers";
+import axios from "axios";
 
 const GlobalContext = createContext({});
 
@@ -24,15 +25,10 @@ const GlobalContextProvider = ({ children }) => {
     const loadRestaurants = async () => {
       restaurantsDispatch({ type: "LOADING", payload: true });
       try {
-        const res = await fetch("http://localhost:3000/data.json", {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
-        const data = await res.json();
+        const res = await axios.get("http://localhost:3000/data.json");
         restaurantsDispatch({
           type: "LOAD_RESTAURANTS",
-          payload: data.restaurants,
+          payload: res.data.restaurants,
         });
         restaurantsDispatch({ type: "LOADING", payload: false });
       } catch (err) {
