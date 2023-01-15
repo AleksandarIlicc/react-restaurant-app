@@ -6,12 +6,11 @@ import "slick-carousel/slick/slick-theme.css";
 import DeliveryRestaurants from "../SortedRestaurants/DeliveryRestaurants";
 import OutDoorSeatingRestaurants from "../SortedRestaurants/OutDoorSeatingRestaurants";
 import RestaurantsList from "../../pages/Restaurants/RestaurantsList";
-import Spinner from "../spinner";
 import { useGlobalContext } from "../../context/GlobalContext";
 
 const Restaurants = () => {
   const {
-    restaurantsState: { restaurants, loading, error },
+    restaurantsState: { restaurants },
   } = useGlobalContext();
   // Filter Delivery Restaurants
   const filterDeliveryRestaurants = restaurants.filter(
@@ -70,69 +69,54 @@ const Restaurants = () => {
 
   return (
     <div className="restaurants__container restaurants__grid">
-      {!error ? (
-        <>
-          {loading ? <Spinner /> : <RestaurantsList />}
-          <div className="slider">
-            <h3
-              style={{ marginLeft: 10 }}
-              className="heading__tertiary mb--medium"
-            >
-              Delivery restaurants
-            </h3>
-            <Slider ref={refDeliverySlider} {...deliverySliderSettings}>
-              {filterDeliveryRestaurants.map((restaurant) => (
-                <DeliveryRestaurants
-                  key={restaurant.id}
-                  restaurant={restaurant}
-                />
-              ))}
-            </Slider>
-            <button
-              className="delivery__arrow delivery__arrow--left"
-              onClick={() => refDeliverySlider.current.slickPrev()}
-            >
-              <FaAngleLeft />
-            </button>
-            <button
-              className="delivery__arrow delivery__arrow--right"
-              onClick={() => refDeliverySlider.current.slickNext()}
-            >
-              <FaAngleRight />
-            </button>
-          </div>
-          <div className="slider">
-            <h3
-              style={{ marginLeft: 10 }}
-              className="heading__tertiary mb--medium"
-            >
-              Outdoor Seating restaurants
-            </h3>
-            <Slider ref={refOutSeatingSlider} {...outdoorSliderSettings}>
-              {filterOutsittingRestaurants.map((restaurant) => (
-                <OutDoorSeatingRestaurants
-                  key={restaurant.id}
-                  restaurant={restaurant}
-                />
-              ))}
-            </Slider>
-            <button
-              className="delivery__arrow delivery__arrow--left"
-              onClick={() => refOutSeatingSlider.current.slickPrev()}
-            >
-              <FaAngleLeft />
-            </button>
-            <button
-              className="delivery__arrow delivery__arrow--right"
-              onClick={() => refOutSeatingSlider.current.slickNext()}
-            >
-              <FaAngleRight />
-            </button>
-          </div>
-        </>
-      ) : (
-        <p>{error}</p>
-      )}
+      <RestaurantsList />
+      <div className="slider">
+        <h3 style={{ marginLeft: 10 }} className="heading__tertiary mb--medium">
+          Delivery restaurants
+        </h3>
+        <Slider ref={refDeliverySlider} {...deliverySliderSettings}>
+          {filterDeliveryRestaurants.map((restaurant) => (
+            <DeliveryRestaurants key={restaurant.id} restaurant={restaurant} />
+          ))}
+        </Slider>
+        <button
+          className="delivery__arrow delivery__arrow--left"
+          onClick={() => refDeliverySlider.current.slickPrev()}
+        >
+          <FaAngleLeft />
+        </button>
+        <button
+          className="delivery__arrow delivery__arrow--right"
+          onClick={() => refDeliverySlider.current.slickNext()}
+        >
+          <FaAngleRight />
+        </button>
+      </div>
+      <div className="slider">
+        <h3 style={{ marginLeft: 10 }} className="heading__tertiary mb--medium">
+          Outdoor Seating restaurants
+        </h3>
+        <Slider ref={refOutSeatingSlider} {...outdoorSliderSettings}>
+          {filterOutsittingRestaurants.map((restaurant) => (
+            <OutDoorSeatingRestaurants
+              key={restaurant.id}
+              restaurant={restaurant}
+            />
+          ))}
+        </Slider>
+        <button
+          className="delivery__arrow delivery__arrow--left"
+          onClick={() => refOutSeatingSlider.current.slickPrev()}
+        >
+          <FaAngleLeft />
+        </button>
+        <button
+          className="delivery__arrow delivery__arrow--right"
+          onClick={() => refOutSeatingSlider.current.slickNext()}
+        >
+          <FaAngleRight />
+        </button>
+      </div>
     </div>
   );
 };

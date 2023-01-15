@@ -1,14 +1,12 @@
-import React, { useReducer, useContext, createContext, useEffect } from "react";
+import React, { useReducer, useContext, createContext } from "react";
 import { restaurantsReducer } from "./Reducers";
-import axios from "axios";
+import data from "../data.json";
 
 const GlobalContext = createContext({});
 
 const initialState = {
-  restaurants: [],
+  restaurants: data.restaurants,
   booked: [],
-  loading: true,
-  error: "",
   search: "",
   sort: "all",
   delivery: false,
@@ -20,24 +18,6 @@ const GlobalContextProvider = ({ children }) => {
     restaurantsReducer,
     initialState
   );
-
-  useEffect(() => {
-    const loadRestaurants = async () => {
-      restaurantsDispatch({ type: "LOADING", payload: true });
-      try {
-        const res = await axios.get("http://localhost:3000/data.json");
-        restaurantsDispatch({
-          type: "LOAD_RESTAURANTS",
-          payload: res.data.restaurants,
-        });
-        restaurantsDispatch({ type: "LOADING", payload: false });
-      } catch (err) {
-        restaurantsDispatch({ type: "ERROR", payload: err });
-        restaurantsDispatch({ type: "LOADING", payload: false });
-      }
-    };
-    loadRestaurants();
-  }, []);
 
   return (
     <GlobalContext.Provider

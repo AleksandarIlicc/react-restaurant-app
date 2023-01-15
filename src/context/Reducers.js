@@ -1,10 +1,5 @@
 export const restaurantsReducer = (state, action) => {
   switch (action.type) {
-    case "LOAD_RESTAURANTS":
-      return {
-        ...state,
-        restaurants: [...action.payload],
-      };
     case "BOOKED_RESTAURANT":
       const existRestauran = state.booked.find(
         (res) => res.id === action.payload.id
@@ -18,16 +13,6 @@ export const restaurantsReducer = (state, action) => {
       } else {
         return { ...state, booked: [...state.booked, action.payload] };
       }
-    case "LOADING":
-      return {
-        ...state,
-        loading: action.payload,
-      };
-    case "ERROR":
-      return {
-        ...state,
-        error: action.payload,
-      };
     case "SEARCH_RESTAURANTS":
       return {
         ...state,

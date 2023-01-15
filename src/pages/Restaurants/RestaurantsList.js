@@ -1,19 +1,11 @@
 import React from "react";
 import { useGlobalContext } from "../../context/GlobalContext";
 import FilterRestaurants from "../../components/FilterRestaurants";
-import Spinner from "../../components/spinner";
 import SingleRestaurant from "./SingleRestaurant";
 
 const RestaurantsList = () => {
   const {
-    restaurantsState: {
-      restaurants,
-      loading,
-      search,
-      sort,
-      delivery,
-      outdoorsitting,
-    },
+    restaurantsState: { restaurants, search, sort, delivery, outdoorsitting },
   } = useGlobalContext();
 
   const sortRestaurants = () => {
@@ -53,15 +45,9 @@ const RestaurantsList = () => {
     <div className="restaurants-list">
       <FilterRestaurants />
       <div className="wrapper">
-        {loading ? (
-          <Spinner />
-        ) : sortRestaurants().length ? (
-          sortRestaurants().map((restaurant) => (
-            <SingleRestaurant key={restaurant.id} restaurant={restaurant} />
-          ))
-        ) : (
-          <p>Does not find restaurant</p>
-        )}
+        {sortRestaurants().map((restaurant) => (
+          <SingleRestaurant key={restaurant.id} restaurant={restaurant} />
+        ))}
       </div>
     </div>
   );
